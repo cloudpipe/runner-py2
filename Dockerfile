@@ -11,3 +11,5 @@ USER rho
 ENV HOME /home/rho
 ENV SHELL /bin/bash
 ENV USER rho
+
+CMD ["python", "-m", "multyvacinit.pybootstrap"]
