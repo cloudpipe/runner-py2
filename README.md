@@ -19,5 +19,6 @@ A /home/rho/.multyvac/multyvac.json
 C /tmp
 A /tmp/.result
 $ docker cp rhoyourboat:/tmp/.result .
-$ python -c "import pickle; print(pickle.load(open('.result', 'rb')))"5
+$ python -c "import pickle; print(pickle.load(open('.result', 'rb')))"
+5
 ```
