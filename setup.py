@@ -12,6 +12,7 @@ readme = open('README.rst').read()
 history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 requirements = [
+    'multyvac==0.5.0'
 ]
 
 test_requirements = [

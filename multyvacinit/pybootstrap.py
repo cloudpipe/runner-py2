@@ -1,5 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import sys
+import pickle
+
+import multyvac.util.cloudpickle as cloudpickle
+
 if __name__ == "__main__":
-    print("You did it bucko")
+    (f, args, kwargs) = pickle.load(sys.stdin)
+    res = f(args, kwargs)
+
+    cloudpickle.dump(res, open("/tmp/.result", "wb"))
