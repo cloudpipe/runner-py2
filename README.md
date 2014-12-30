@@ -21,3 +21,13 @@ A /tmp/.result
 $ docker cp rhoyourboat:/tmp/.result .
 $ python -c "import pickle; print(pickle.load(open('.result', 'rb')))"5
 ```
+
+All in one shot:
+
+```
+python -c "import sys; import multyvac.util.cloudpickle as cloudpickle; cloudpickle.dump((lambda x,y: x+y, (2,3), {}), sys.stdout)" \
+  | docker run -i --name rhoyourboat rgbkrk/inrhocloud;
+docker start rhoyourboat && \
+  docker exec rhoyourboat cat /tmp/.result | python -c "import sys, pickle; print(pickle.load(sys.stdin))" && \
+  docker stop rhoyourboat
+```
