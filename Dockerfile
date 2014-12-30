@@ -1,4 +1,4 @@
-FROM ipython/ipython
+FROM ipython/scipystack
 
 ADD . /srv/inrhocloud/
 WORKDIR /srv/inrhocloud
