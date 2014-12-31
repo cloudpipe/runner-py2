@@ -3,7 +3,7 @@ FROM ipython/scipystack
 ADD . /srv/inrhocloud/
 WORKDIR /srv/inrhocloud
 
-RUN pip install .
+RUN pip2 install .
 
 RUN useradd -m -s /bin/bash rho
 
@@ -12,4 +12,4 @@ ENV HOME /home/rho
 ENV SHELL /bin/bash
 ENV USER rho
 
-CMD ["python", "-m", "multyvacinit.pybootstrap"]
+CMD ["python2", "-m", "multyvacinit.pybootstrap"]
