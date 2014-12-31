@@ -1,7 +1,7 @@
 FROM ipython/scipystack
 
-ADD . /srv/inrhocloud/
-WORKDIR /srv/inrhocloud
+ADD . /srv/runner/
+WORKDIR /srv/runner/
 
 RUN pip2 install .
 
