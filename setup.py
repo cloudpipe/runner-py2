@@ -8,8 +8,9 @@ except ImportError:
     from distutils.core import setup
 
 
-readme = open('README.rst').read()
-history = open('HISTORY.rst').read().replace('.. :changelog:', '')
+# Let us be bad
+readme = open('README.md').read()
+history = ''
 
 requirements = [
     'multyvac==0.5.0'
@@ -22,7 +23,7 @@ test_requirements = [
 setup(
     name='multyvacinit',
     version='0.1.0',
-    description='multyvacinit for rhocloud',
+    description='multyvacinit for cloudpipe',
     long_description=readme + '\n\n' + history,
     author='Kyle Kelley',
     author_email='rgbkrk@gmail.com',
