@@ -1,15 +1,27 @@
-FROM ipython/scipystack
+FROM debian:jessie
 
-ADD . /srv/runner/
-WORKDIR /srv/runner/
+MAINTAINER Kyle Kelley <rgbkrk@gmail.com>
 
-RUN pip2 install .
-
-RUN useradd -m -s /bin/bash rho
+RUN apt-get update && \
+    apt-get install -y wget bzip2 && \
+    useradd -m -s /bin/bash rho && \
+    echo 'export PATH=/home/rho/anaconda:$PATH' > /etc/profile.d/conda.sh
 
 USER rho
 ENV HOME /home/rho
 ENV SHELL /bin/bash
 ENV USER rho
+ENV PATH /home/rho/anaconda/bin:$PATH
+
+WORKDIR /home/rho
+
+RUN wget --quiet http://repo.continuum.io/miniconda/Miniconda-3.6.0-Linux-x86_64.sh && \
+    /bin/bash /home/rho/Miniconda-3.6.0-Linux-x86_64.sh -b -p /home/rho/anaconda && \
+    rm /home/rho/Miniconda-3.6.0-Linux-x86_64.sh
+
+RUN conda install pip
+
+ADD . /srv/runner/
+RUN pip install file:///srv/runner/
 
 CMD ["python2", "-m", "multyvacinit.pybootstrap"]
