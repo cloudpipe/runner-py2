@@ -1,9 +1,10 @@
-FROM ipython/scipystack
+FROM continuumio/miniconda
 
 ADD . /srv/runner/
 WORKDIR /srv/runner/
 
-RUN pip2 install .
+RUN conda install pip
+RUN pip install .
 
 RUN useradd -m -s /bin/bash rho
 
