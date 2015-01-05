@@ -2,10 +2,10 @@ FROM ubuntu:14.04
 
 MAINTAINER Kyle Kelley <rgbkrk@gmail.com>
 
-RUN apt-get update && apt-get install -y wget bzip2
-RUN useradd -m -s /bin/bash rho
-
-RUN echo 'export PATH=/home/rho/anaconda:$PATH' > /etc/profile.d/conda.sh
+RUN apt-get update && \
+    apt-get install -y wget bzip2 && \
+    useradd -m -s /bin/bash rho && \
+    echo 'export PATH=/home/rho/anaconda:$PATH' > /etc/profile.d/conda.sh
 
 USER rho
 ENV HOME /home/rho
