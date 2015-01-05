@@ -20,9 +20,8 @@ RUN wget --quiet http://repo.continuum.io/miniconda/Miniconda-3.6.0-Linux-x86_64
     rm /home/rho/Miniconda-3.6.0-Linux-x86_64.sh
 
 RUN conda install pip
-RUN pip install .
 
 ADD . /srv/runner/
-WORKDIR /srv/runner/
+RUN pip install file:///srv/runner/
 
 CMD ["python2", "-m", "multyvacinit.pybootstrap"]
