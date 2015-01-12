@@ -15,9 +15,9 @@ ENV PATH /home/rho/anaconda/bin:$PATH
 
 WORKDIR /home/rho
 
-RUN wget --quiet http://repo.continuum.io/miniconda/Miniconda-3.6.0-Linux-x86_64.sh && \
-    /bin/bash /home/rho/Miniconda-3.6.0-Linux-x86_64.sh -b -p /home/rho/anaconda && \
-    rm /home/rho/Miniconda-3.6.0-Linux-x86_64.sh
+RUN wget --quiet http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh && \
+    /bin/bash /home/rho/Miniconda-latest-Linux-x86_64.sh -b -p /home/rho/anaconda && \
+    rm /home/rho/Miniconda-latest-Linux-x86_64.sh
 
 RUN conda install pip
 
