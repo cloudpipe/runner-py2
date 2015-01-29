@@ -1,7 +1,7 @@
 runner-py2
 ==========
 
-Service to handle pickled code from cloudpipe.
+Service to handle pickled code from multyvac.
 
 Full example:
 
