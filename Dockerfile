@@ -20,6 +20,7 @@ RUN wget --quiet http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_6
     rm /home/rho/Miniconda-latest-Linux-x86_64.sh
 
 RUN conda install pip
+RUN conda install beautiful-soup
 
 ADD . /srv/runner/
 RUN pip install file:///srv/runner/
