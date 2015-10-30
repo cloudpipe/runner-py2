@@ -17,7 +17,6 @@ requirements = [
 ]
 
 test_requirements = [
-    # TODO: put package test requirements here
 ]
 
 setup(
@@ -27,7 +26,7 @@ setup(
     long_description=readme + '\n\n' + history,
     author='Kyle Kelley',
     author_email='rgbkrk@gmail.com',
-    url='https://github.com/rgbkrk/multyvacinit',
+    url='https://github.com/cloudpipe/runner-py2',
     packages=[
         'multyvacinit',
     ],
@@ -36,7 +35,7 @@ setup(
     include_package_data=True,
     install_requires=requirements,
     license="BSD",
-    zip_safe=False,
+    zip_safe=True,
     keywords='multyvacinit',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
