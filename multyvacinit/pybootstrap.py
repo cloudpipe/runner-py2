@@ -4,7 +4,7 @@
 import sys
 import pickle
 
-import multyvac.util.cloudpickle as cloudpickle
+import cloudpickle
 
 if __name__ == "__main__":
     (f, args, kwargs) = pickle.load(sys.stdin)
