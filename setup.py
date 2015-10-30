@@ -13,7 +13,7 @@ readme = open('README.md').read()
 history = ''
 
 requirements = [
-    'multyvac==0.5.0'
+    'cloudpickle'
 ]
 
 test_requirements = [
